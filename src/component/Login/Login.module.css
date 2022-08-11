@@ -1,0 +1,62 @@
+.registration {
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(1, 38, 80, 0.432);
+}
+
+h1 {
+  font-size: 36px;
+}
+
+.registration_pole {
+  width: 390px;
+  margin: 0 auto;
+  margin: 65px 0;
+}
+
+.comeInBtn {
+  width: 250px;
+  height: 50px;
+  display: flex;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffc617;
+  border-radius: 5px;
+  border: none;
+  font-size: 21px;
+  margin-left: 40%;
+  margin-top: 40px;
+}
+
+input:focus {
+  outline: 0;
+}
+
+label {
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+}
+
+
+input:not([type]),
+input[type=text]:not(.browser-default),
+input[type=password]:not(.browser-default),
+input[type=email]:not(.browser-default),
+input[type=url]:not(.browser-default),
+input[type=time]:not(.browser-default),
+input[type=date]:not(.browser-default),
+input[type=datetime]:not(.browser-default),
+input[type=datetime-local]:not(.browser-default),
+input[type=tel]:not(.browser-default),
+input[type=number]:not(.browser-default),
+input[type=search]:not(.browser-default),
+textarea.materialize-textarea {
+  border: 1px solid #707070;
+  border-radius: 5px;
+  background-color: #fff;
+}
