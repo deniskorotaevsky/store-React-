@@ -2,10 +2,13 @@ import React, { Component } from "react";
 import './App.css';
 import Login from './component/Login/Login';
 import Home from './component/Home/Home';
+import Store from "./component/Store/Store";
 
-const PAGES = {
+const Pages = {
   login: Login,
   home: Home,
+  store: Store
+
 };
 
 class App extends Component {
@@ -17,7 +20,7 @@ class App extends Component {
 
   render() {
     const { page } = this.state;
-    const Page = PAGES[page];
+    const Page = Pages[page];
 
     return (
       <>

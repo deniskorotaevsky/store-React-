@@ -42,7 +42,6 @@ label {
   color: rgb(255, 255, 255);
 }
 
-
 input:not([type]),
 input[type=text]:not(.browser-default),
 input[type=password]:not(.browser-default),
