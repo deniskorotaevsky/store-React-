@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 
 const Login = (props) => {
     const { setPage } = props;
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [emailDirty, setEmailDirty] = useState(false);
@@ -56,13 +55,17 @@ const Login = (props) => {
 
     return (
         <div className={s.registration}>
-            <div className={s.registration_pole}>
+            <div className={s.registration_input}>
                 <h1>Авторизация</h1>
 
                 <form onSubmit={() => setPage('home')}>
-                    <div>
+                    <div
+                        style={{
+                            height: '110px',
+                        }}
+                    >
                         <label>
-                            <p>Адрес электронной почты</p>
+                            <p>Электронная почта</p>
                             <input
                                 value={email}
                                 onChange={(e) => emailHandler(e)}
@@ -71,11 +74,22 @@ const Login = (props) => {
                                 name='email'
                             />
                             {emailDirty && emailError && (
-                                <div style={{ color: 'red' }}>{emailError}</div>
+                                <div
+                                    className='redText'
+                                    style={{
+                                        color: 'red',
+                                    }}
+                                >
+                                    {emailError}
+                                </div>
                             )}
                         </label>
                     </div>
-                    <div>
+                    <div
+                        style={{
+                            height: '115px',
+                        }}
+                    >
                         <label>
                             <p>Пароль</p>
                             <input
@@ -86,16 +100,24 @@ const Login = (props) => {
                                 name='password'
                             />
                             {passwordError && passwordDirty && (
-                                <div style={{ color: 'black' }}>
+                                <div
+                                    style={{
+                                        color: 'red',
+                                    }}
+                                >
                                     {passwordError}
                                 </div>
                             )}
                         </label>
                     </div>
                     <button
+                        style={{
+                            display: 'flex',
+                            margin: '0 auto',
+                        }}
                         disabled={!formValid}
-                        className={s.comeInBtn}
                         type='submit'
+                        className='btn'
                     >
                         Авторизация
                     </button>
