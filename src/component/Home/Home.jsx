@@ -5,18 +5,20 @@ import 'antd/dist/antd.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import { Pagination } from 'antd';
 
 function Home(props) {
     const [dataSource, setDataSource] = useState([]);
     const [totalPages, setTotalPages] = useState(1);
     const [loading, setLoading] = useState(false);
+    const { setPage } = props;
 
-    let delete1 = `${(<button>Delete</button>)}`;
-    const cTime = `${moment().format('DD.MM.YYYY HH:mm')}`;
+    const time = `${moment().format('DD.MM.YYYY HH:mm')}`;
 
     useEffect(() => {
         fetchRecords(1);
     }, []);
+
     const columns = [
         {
             title: 'ID',
@@ -32,11 +34,12 @@ function Home(props) {
         },
         {
             title: 'Дата создания',
-            dataIndex: 'ctime',
+            dataIndex: 'role2',
+            render: () => time,
         },
         {
             title: 'Действия',
-            dataIndex: { delete1 },
+            render: () => <button>Удалить</button>,
         },
     ];
 
@@ -55,8 +58,6 @@ function Home(props) {
             })
             .catch((error) => console.log(error));
     };
-
-    const { setPage } = props;
 
     return (
         <>
@@ -103,7 +104,6 @@ function Home(props) {
                 >
                     <h1>Список пользователей</h1>
                     <Table
-                        delete={`${(<button>Delete</button>)}`}
                         columns={columns}
                         dataSource={dataSource}
                         pagination={{

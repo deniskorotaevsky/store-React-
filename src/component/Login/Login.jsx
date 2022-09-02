@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 
 const Login = (props) => {
     const { setPage } = props;
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [emailDirty, setEmailDirty] = useState(false);
