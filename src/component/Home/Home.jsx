@@ -5,7 +5,6 @@ import 'antd/dist/antd.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import moment from 'moment';
-import { Pagination } from 'antd';
 
 function Home(props) {
     const [dataSource, setDataSource] = useState([]);
@@ -13,33 +12,59 @@ function Home(props) {
     const [loading, setLoading] = useState(false);
     const { setPage } = props;
 
-    const time = `${moment().format('DD.MM.YYYY HH:mm')}`;
-
     useEffect(() => {
         fetchRecords(1);
     }, []);
 
     const columns = [
         {
+            id: 'id',
             title: 'ID',
             dataIndex: 'id',
+            key: 'id',
         },
         {
+            id: 'id',
             title: 'Имя',
             dataIndex: 'name',
+            key: 'name',
         },
         {
+            id: 'id',
             title: 'Роль',
             dataIndex: 'role',
+            key: 'role',
         },
         {
+            id: 'id',
             title: 'Дата создания',
-            dataIndex: 'role2',
-            render: () => time,
+            dataIndex: 'time',
+            render: () => `${moment().format('DD.MM.YYYY HH:mm')}`,
+            key: 'time',
         },
         {
+            id: 'id',
             title: 'Действия',
-            render: () => <button>Удалить</button>,
+            key: 'button',
+
+            render: (record) => {
+                return (
+                    <>
+                        <button
+                            onClick={() => {
+                                onDeleteUsers(record);
+                            }}
+                            style={{
+                                background: '#00FFFF',
+                                borderRadius: '5px',
+                                borderColor: '#00FFFF',
+                            }}
+                        >
+                            Удаление
+                        </button>
+                    </>
+                );
+            },
         },
     ];
 
@@ -57,6 +82,12 @@ function Home(props) {
                 setLoading(false);
             })
             .catch((error) => console.log(error));
+    };
+
+    const onDeleteUsers = (record) => {
+        setDataSource((pre) => {
+            return pre.filter((users) => users.id !== record.id);
+        });
     };
 
     return (
