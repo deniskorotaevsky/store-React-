@@ -51,6 +51,7 @@ function Home(props) {
                 return (
                     <>
                         <button
+                            className={s.delete_botton}
                             onClick={() => {
                                 onDeleteUsers(record);
                             }}
@@ -128,9 +129,9 @@ function Home(props) {
                     className={s.table}
                     style={{
                         display: 'flex',
-                        justifyContent: 'start',
-                        alignItems: 'center',
-                        marginLeft: '50px',
+                        flexDirection: 'column',
+                        margin: '0 auto',
+                        width: '70%',
                     }}
                 >
                     <h1>Список пользователей</h1>
