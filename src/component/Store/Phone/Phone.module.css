@@ -1,0 +1,116 @@
+.iPhone_wrap {
+    width: 400px;
+    height: 800px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+    background-color: rgb(255, 255, 255);
+    padding: 30px 0;
+    margin: 10px;
+}
+
+.iPhone {
+    width: 400px;
+    height: 400px;
+}
+
+.iPhone img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+h1 {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.price {
+    color: #ff00CC;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.price .rub {
+    border-bottom: 1px solid #ff00CC;
+    line-height: 8px;
+    width: 0.4em;
+    display: inline-block;
+}
+
+.price_discount {
+    font-size: 18px;
+    color: grey;
+    margin-left: 15px;
+    margin-bottom: -3px;
+}
+
+.star_box {
+    display: flex;
+}
+
+.rub {
+    line-height: 5px;
+    width: 0.4em;
+    border-bottom: 1px solid grey;
+    display: inline-block;
+}
+
+.iPhone_aside {
+    padding: 35px 20px;
+}
+
+.star_row {
+    display: flex;
+    justify-content: space-between;
+    width: 180px;
+}
+
+.star * {
+    fill: #ff00CC;
+}
+
+.star_grade {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 10px;
+    font-size: 17px;
+    color: rgba(128, 128, 128, 0.678);
+    font-weight: 500;
+}
+
+.characteristics {
+    font-size: 20px;
+    color: grey;
+    border-color: rgb(253, 139, 0);
+    margin-bottom: 10px;
+}
+
+.installmentPlan {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 15px;
+    background: linear-gradient(90deg, #baeeba9d, #fbff00d5);
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+}
+
+.cart p {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 15px;
+    background: #ff00CC;
+    border-radius: 7px;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    margin-top: 5px;
+    margin-right: 15px;
+}
