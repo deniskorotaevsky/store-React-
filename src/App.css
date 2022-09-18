@@ -3,6 +3,11 @@
   margin: 0 auto;
 }
 
+.active-link {
+  color: var(--color-active);
+  cursor: default;
+}
+
 /* button[type='button'] {
   display: block;
   appearance: none;

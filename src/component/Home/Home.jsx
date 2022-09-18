@@ -6,11 +6,10 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import moment from 'moment';
 
-function Home(props) {
+function Home() {
     const [dataSource, setDataSource] = useState([]);
     const [totalPages, setTotalPages] = useState(1);
     const [loading, setLoading] = useState(false);
-    const { setPage } = props;
 
     useEffect(() => {
         fetchRecords(1);
@@ -91,31 +90,12 @@ function Home(props) {
         });
     };
 
+    const setActive = ({ isActive }) => ({
+        color: isActive ? 'red' : 'black',
+    });
+
     return (
         <>
-            <header>
-                <nav>
-                    <button
-                        className={s.nav_botton}
-                        onClick={() => setPage('home')}
-                    >
-                        Главная страница
-                    </button>
-                    <button
-                        className={s.nav_botton}
-                        onClick={() => setPage('login')}
-                    >
-                        Авторизация
-                    </button>
-                    <button
-                        className={s.nav_botton}
-                        onClick={() => setPage('store')}
-                    >
-                        Магазин
-                    </button>
-                </nav>
-            </header>
-
             {!dataSource.length > 0 ? (
                 <span
                     style={{
@@ -134,7 +114,7 @@ function Home(props) {
                         width: '70%',
                     }}
                 >
-                    <h1>Список пользователей</h1>
+                    <div className={s.title}>Список пользователей</div>
                     <Table
                         columns={columns}
                         dataSource={dataSource}
