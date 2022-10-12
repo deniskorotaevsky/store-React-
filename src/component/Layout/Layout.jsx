@@ -1,7 +1,9 @@
 import { NavLink, Outlet } from 'react-router-dom';
 
 const setActive = ({ isActive }) => ({
-    color: isActive ? 'red' : 'black',
+    color: isActive ? 'blue' : 'black',
+    borderBottom: isActive ? '1px solid rgb(0, 34, 128)' : '',
+    paddingBottom: isActive ? '10px' : '',
 });
 
 const Layout = () => {
@@ -9,10 +11,11 @@ const Layout = () => {
         <>
             <div
                 style={{
-                    width: '300px',
+                    width: '320px',
                     display: 'flex',
                     justifyContent: 'space-between',
                     color: 'black',
+                    padding: '10px ',
                 }}
             >
                 <NavLink style={setActive} to='/home'>

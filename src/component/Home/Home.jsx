@@ -5,6 +5,8 @@ import 'antd/dist/antd.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from '../Layout/Layout';
 
 function Home() {
     const [dataSource, setDataSource] = useState([]);
@@ -96,6 +98,9 @@ function Home() {
 
     return (
         <>
+            <Routes>
+                <Route path='/' element={<Layout />} />
+            </Routes>
             {!dataSource.length > 0 ? (
                 <span
                     style={{
@@ -131,4 +136,4 @@ function Home() {
         </>
     );
 }
-export default Home;
+export { Home };

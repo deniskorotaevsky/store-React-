@@ -1,11 +1,14 @@
 import s from './Store.module.css';
 import Phone from './Phone/Phone';
-// import Layout from '../layout/layout';
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from '../Layout/Layout';
 
 const Store = () => {
     return (
         <>
-            {/* <Layout /> */}
+            <Routes>
+                <Route path='/' element={<Layout />} />
+            </Routes>
             <div className={s.store}>
                 <div className={s.store_row}>
                     <Phone />
@@ -18,4 +21,4 @@ const Store = () => {
     );
 };
 
-export default Store;
+export { Store };

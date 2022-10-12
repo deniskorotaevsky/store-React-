@@ -1,6 +1,6 @@
 import s from './Login.module.css';
-import { useEffect, useState } from 'react';
-import Home from '../Home/Home';
+import { useEffect, useState, useNavigate } from 'react';
+import { Home } from '../Home/Home';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -137,4 +137,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export { Login };
