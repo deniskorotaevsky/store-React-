@@ -1,6 +1,11 @@
 .store {
     background-color: rgb(248, 248, 248);
-    height: 100vh;
+}
+
+.store_row {
+    display: flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
 }
 
 header {
@@ -14,10 +19,9 @@ nav {
     justify-content: center;
     justify-content: space-between;
     height: 50px;
-    width: 400px;
+    width: 20%;
     background: none;
     box-shadow: none;
-    margin-left: 20px;
     color: black;
 }
 
@@ -28,19 +32,14 @@ nav {
     border-bottom: 1px solid rgba(16, 13, 175, 0);
     margin: 0;
     line-height: 48px;
+    padding: 0 10px;
 }
 
 .nav_botton:hover {
     border-bottom: 2px solid rgb(0, 68, 255);
     margin-top: 2px;
-    border-radius: 0;
 }
 
 .nav_botton:focus {
     background: rgb(255, 255, 255);
-}
-
-.store_row {
-    display: flex;
-    justify-content:space-around;
 }

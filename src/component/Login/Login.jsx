@@ -1,8 +1,8 @@
 import s from './Login.module.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useNavigate } from 'react';
+import { Home } from '../Home/Home';
 
-const Login = (props) => {
-    const { setPage } = props;
+const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [emailDirty, setEmailDirty] = useState(false);
@@ -10,6 +10,7 @@ const Login = (props) => {
     const [emailError, setEmailError] = useState(' ');
     const [passwordError, setPasswordError] = useState(' ');
     const [formValid, setFormValid] = useState(false);
+    const [success, setSuccess] = useState(false);
 
     useEffect(() => {
         if (emailError || passwordError) {
@@ -53,78 +54,87 @@ const Login = (props) => {
         }
     };
 
-    return (
-        <div className={s.registration}>
-            <div className={s.registration_input}>
-                <h1>Авторизация</h1>
+    const handleSubmit = () => {
+        setSuccess(true);
+    };
 
-                <form onSubmit={() => setPage('home')}>
-                    <div
-                        style={{
-                            height: '110px',
-                        }}
-                    >
-                        <label>
-                            <p>Электронная почта</p>
-                            <input
-                                value={email}
-                                onChange={(e) => emailHandler(e)}
-                                onBlur={(e) => blurHandler(e)}
-                                type='text'
-                                name='email'
-                            />
-                            {emailDirty && emailError && (
-                                <div
-                                    className='redText'
-                                    style={{
-                                        color: 'red',
-                                    }}
-                                >
-                                    {emailError}
-                                </div>
-                            )}
-                        </label>
+    return (
+        <>
+            {success ? (
+                <Home />
+            ) : (
+                <div className={s.registration}>
+                    <div className={s.registration_input}>
+                        <h1 className={s.title}>Авторизация</h1>
+                        <form onSubmit={handleSubmit}>
+                            <div
+                                style={{
+                                    height: '110px',
+                                }}
+                            >
+                                <label>
+                                    <p>Электронная почта</p>
+                                    <input
+                                        value={email}
+                                        onChange={(e) => emailHandler(e)}
+                                        onBlur={(e) => blurHandler(e)}
+                                        type='text'
+                                        name='email'
+                                    />
+                                    {emailDirty && emailError && (
+                                        <div
+                                            className='redText'
+                                            style={{
+                                                color: 'red',
+                                            }}
+                                        >
+                                            {emailError}
+                                        </div>
+                                    )}
+                                </label>
+                            </div>
+                            <div
+                                style={{
+                                    height: '115px',
+                                }}
+                            >
+                                <label>
+                                    <p>Пароль</p>
+                                    <input
+                                        onChange={(e) => passwordHandler(e)}
+                                        value={password}
+                                        onBlur={(e) => blurHandler(e)}
+                                        type='password'
+                                        name='password'
+                                    />
+                                    {passwordError && passwordDirty && (
+                                        <div
+                                            style={{
+                                                color: 'red',
+                                            }}
+                                        >
+                                            {passwordError}
+                                        </div>
+                                    )}
+                                </label>
+                            </div>
+                            <button
+                                style={{
+                                    display: 'flex',
+                                    margin: '0 auto',
+                                }}
+                                disabled={!formValid}
+                                type='submit'
+                                className='btn'
+                            >
+                                Авторизация
+                            </button>
+                        </form>
                     </div>
-                    <div
-                        style={{
-                            height: '115px',
-                        }}
-                    >
-                        <label>
-                            <p>Пароль</p>
-                            <input
-                                onChange={(e) => passwordHandler(e)}
-                                value={password}
-                                onBlur={(e) => blurHandler(e)}
-                                type='password'
-                                name='password'
-                            />
-                            {passwordError && passwordDirty && (
-                                <div
-                                    style={{
-                                        color: 'red',
-                                    }}
-                                >
-                                    {passwordError}
-                                </div>
-                            )}
-                        </label>
-                    </div>
-                    <button
-                        style={{
-                            display: 'flex',
-                            margin: '0 auto',
-                        }}
-                        disabled={!formValid}
-                        type='submit'
-                        className='btn'
-                    >
-                        Авторизация
-                    </button>
-                </form>
-            </div>
-        </div>
+                </div>
+            )}
+        </>
     );
 };
 
-export default Login;
+export { Login };

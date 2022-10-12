@@ -1,41 +1,24 @@
 import s from './Store.module.css';
 import Phone from './Phone/Phone';
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from '../Layout/Layout';
 
-export const Store = (props) => {
-    const { setPage } = props;
-
+const Store = () => {
     return (
-        <div className={s.store}>
-            <header>
-                <nav>
-                    <button
-                        className={s.nav_botton}
-                        onClick={() => setPage('home')}
-                    >
-                        Главная страница
-                    </button>
-                    <button
-                        className={s.nav_botton}
-                        onClick={() => setPage('login')}
-                    >
-                        Авторизация
-                    </button>
-                    <button
-                        className={s.nav_botton}
-                        onClick={() => setPage('store')}
-                    >
-                        Магазин
-                    </button>
-                </nav>
-            </header>
-            <div className={s.store_row}>
-                <Phone />
-                <Phone />
-                <Phone />
-                <Phone />
+        <>
+            <Routes>
+                <Route path='/' element={<Layout />} />
+            </Routes>
+            <div className={s.store}>
+                <div className={s.store_row}>
+                    <Phone />
+                    <Phone />
+                    <Phone />
+                    <Phone />
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 
-export default Store;
+export { Store };

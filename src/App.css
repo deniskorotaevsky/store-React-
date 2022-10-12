@@ -3,30 +3,7 @@
   margin: 0 auto;
 }
 
-/* button[type='button'] {
-  display: block;
-  appearance: none;
-  background: rgb(255, 5, 5);
-  color: white;
-  border: none;
-  text-transform: uppercase;
-  border-radius: 4px;
-} */
-
-/* .pre {
-  color: rgb(255, 0, 0);
-} */
-
-/* button {
-  display: block;
-  appearance: none;
-  border: 1px solid rgb(0, 34, 128);
-  text-transform: uppercase;
-  padding: 10px 20px;
-  border-radius: 4px;
-  width: 100%;
-} */
-
-/* input {
-  border-bottom: none;
-} */
+.active-link {
+  color: var(--color-active);
+  cursor: default;
+}
