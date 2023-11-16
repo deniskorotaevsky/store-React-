@@ -1,4 +1,4 @@
-Стек технологий: react, js, html, css
+Стек технологий: react, js, axios, html, css
 
 тестовое: Store - Relabs
 
