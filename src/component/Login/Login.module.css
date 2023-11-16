@@ -5,7 +5,8 @@
    margin: 0 auto;
    width: 100vw;
    height: 100vh;
-   background-color: rgba(3, 26, 51, 0.575);
+   background: -webkit-linear-gradient(90deg, #8e4899, #8372cb, #4377d4, #00d1d5, #7adabb);
+   background: linear-gradient(90deg, #8e4899, #8372cb, #4377d4, #00d1d5, #7adabb);
  }
 
  .title {
@@ -19,8 +20,9 @@
 
  .registration_input {
    width: 430px;
-   margin: 0 auto;
+   margin: 0 10px;
    margin: 65px 0;
+   
  }
 
  input:not([type]),
@@ -39,4 +41,11 @@
  label {
    font-size: 14px;
    color: rgb(255, 255, 255);
+ }
+
+ @media (max-width: 575px) {
+  .registration_input {
+    width: 95vw;
+    max-width: 437px;   
+  }
  }

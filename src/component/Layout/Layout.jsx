@@ -28,7 +28,6 @@ const Layout = () => {
                     Магазин
                 </NavLink>
             </div>
-
             <Outlet />
         </>
     );
